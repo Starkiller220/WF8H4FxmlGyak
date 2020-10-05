@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE iskola SYSTEM "iskola.dtd">
+<iskola>
+    <tanar kod="tn0001">
+        <nev>Teszt András</nev>
+        <szak>Informatika</szak>
+    </tanar>
+    <tanar kod="tn0002">
+        <nev>Teszt Kornél</nev>
+        <szak>Testnevelés</szak>
+    </tanar>
+    
+    <tantargy kod="tt0001" oktato="tn0001">
+        <tnev>Informatika</tnev>
+        <osztaly>9/A</osztaly>
+    </tantargy>
+    <tantargy kod="tt0002" oktato="tn0002">
+        <tnev>Testnevelés</tnev>
+        <osztaly>11/B</osztaly>
+    </tantargy>
+</iskola>

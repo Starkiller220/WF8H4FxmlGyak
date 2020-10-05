@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE adatbazis [
+<!ELEMENT adatbazis (dolgozo+)>
+<!ELEMENT dolgozo (nev, fizetes)>
+<!ATTLIST dolgozo kod ID #REQUIRED>
+<!ELEMENT nev (#PCDATA)>
+<!ELEMENT fizetes (#PCDATA)>
+]>
+<adatbazis>
+    <dolgozo kod="d0001">
+        <nev>Teszt András</nev>
+        <fizetes>75369247</fizetes>
+    </dolgozo>
+    <dolgozo kod="d0002">
+        <nev>Teszt Kornél</nev>
+        <fizetes>40000000</fizetes>
+    </dolgozo>
+    <dolgozo kod="d0003">
+        <nev>Random Név</nev>
+        <fizetes>25600000</fizetes>
+    </dolgozo>
+</adatbazis>
