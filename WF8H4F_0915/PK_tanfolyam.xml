@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<konfefrencia>
+	<cim>Xml bevezetés</cim>
+	
+	<hallgatók>
+		<hallgato>
+			<nev>Minta János</nev>
+			<lakcim>Valami</lakcim>
+		</hallgato>
+	</hallgatók>
+	<helyszín>XXXVII. Terem</helyszín>
+	<előadó>
+		<név>Minta Béla</név>
+		<adószám>123456</adószám>
+		<lakcím>Szuper Város</lakcím>
+	</előadó>
+	<dátum>2020.09.11</dátum>
+
+</konfefrencia>
