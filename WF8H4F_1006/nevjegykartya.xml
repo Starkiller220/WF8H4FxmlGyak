@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<nevjegykartyak>
+
+	<nevjegykartya id="1">
+		<nev>Teszt Béla</nev>
+		<ceg>
+			<cim>
+				<iranyitoszam>69</iranyitoszam>
+				<varos>Orgrimmar</varos>
+				<utca>Bánat utca</utca>
+				<hazszam>42</hazszam>
+			</cim>
+			<nev>Google</nev>
+			<telefonszam>42069</telefonszam>
+			<weblap>www.google.com</weblap>
+		</ceg>
+		<beosztas>Jedi mester</beosztas>
+		<telefonszam korzet="aaa">69420</telefonszam>
+		<email>xd@lol.com</email>
+	</nevjegykartya>
+	
+	<nevjegykartya id="2">
+		<nev>Teszt Béla</nev>
+		<ceg>
+			<cim>
+				<iranyitoszam>69</iranyitoszam>
+				<varos>Orgrimmar</varos>
+				<utca>Bánat utca</utca>
+				<hazszam>42</hazszam>
+			</cim>
+			<nev>Google</nev>
+			<telefonszam>42069</telefonszam>
+			<weblap>www.google.com</weblap>
+		</ceg>
+		<beosztas>Jedi mester</beosztas>
+		<telefonszam korzet="aaa">69420</telefonszam>
+		<email>xd@lol.com</email>
+	</nevjegykartya>
+
+</nevjegykartyak>

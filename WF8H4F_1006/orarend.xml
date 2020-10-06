@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<orarend>
+		<ora id="0" tipus="tantargy">
+		<targy>XML Előadás</targy>
+		<idopont>
+			<nap>Szerda</nap>
+			<tol>12</tol>
+			<ig>14</ig>
+		</idopont>
+		<helyszin>XXXVII. Előadó</helyszin>
+		<oktato>Dr. Bednarik László</oktato>
+		<szak>PTI</szak>
+		</ora>
+		
+		<ora id="1" tipus="tantargy">
+		<targy>XML Gyakorlat</targy>
+		<idopont>
+			<nap>Szerda</nap>
+			<tol>14</tol>
+			<ig>16</ig>
+		</idopont>
+		<helyszin>Informatikai Épület</helyszin>
+		<oktato>Dr. Bednarik László</oktato>
+		<szak>PTI</szak>
+		</ora>
+</orarend>
