@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fo>
+  <A a1="69420" b1="1" c1="2">
+    <B>menoszoveg</B>
+    <C>nemmenoszoveg</C>
+  </A>
+  <B b1="888" />
+  <C c1="444" />
+  <AC ac1="1337" ac2="42069" />
+</fo>
