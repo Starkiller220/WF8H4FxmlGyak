@@ -29,7 +29,7 @@ public class DOMModifyWF8H4F {
 	        
 	        Node root = doc.getDocumentElement();
 	        
-	        search(root, "videogame", "name", "xd", "1");
+	        search(root, "videogame", "name", "test", "1");
 	        
 	        
 	        modifyDocument(doc, new File("src/XMLWF8H4F.xml"));
