@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><?xml-stylesheet type="text/xsl" href="XMLSchemaWF8H4F.xsd"?><root>
+ 
+<videogame videogame_id="1">
+	<name>DOOM (2016)</name>
+	<price>18999</price>
+	<quantity>69</quantity>
+	<released>2016-06-09</released>
+</videogame>
+ 
+ <videogame videogame_id="2">
+	<name>DOOM Eternal</name>
+	<price>18999</price>
+	<quantity>20</quantity>
+	<released>2020-04-20</released>
+</videogame>
+
+ <videogame videogame_id="3">
+	<name>Dark Souls REMASTERED</name>
+	<price>10000</price>
+	<quantity>14</quantity>
+	<released>2019-03-15</released>
+</videogame>
+
+ <customer customer_id="1">
+ 	<name>Minta Béla</name>
+ 	<username>MenoMano2000</username>
+ 	<registerDate>2015-08-26</registerDate>
+ 	<purchased>5</purchased>
+ 	<shop shop_id="1"/>
+ </customer>
+ 
+ <shop shop_id="1">
+	 <name>Steam</name>
+	 <created>2003-11-10</created>
+	 <owner>Gabe Newell</owner>
+	 <location>Washington</location>
+	 <customer customer_id="1"/>
+	 <videogame videogame_id="1"/>
+ </shop>
+ 
+ <company company_id="1">
+ 	<name>Valve</name>
+ 	<owner>Gabe Newell</owner>
+ 	<location>Washington</location>
+	<value>10000</value>
+	<shop shop_id="1"/>
+ 
+ </company>
+ 
+</root>

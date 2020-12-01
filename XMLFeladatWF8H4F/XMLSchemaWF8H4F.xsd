@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:complexType name="videogameType">
+	<xs:sequence>
+		<xs:element name="name" type="xs:string"/>
+		<xs:element name="price" type="xs:integer"/>
+		<xs:element name="quantity" type="xs:integer"/>
+		<xs:element name="released" type="xs:date"/>
+	</xs:sequence>
+	<xs:attribute name="videogame_id" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="customerType">
+	<xs:sequence>
+		<xs:element name="name" type="xs:string"/>
+		<xs:element name="username" type="xs:string"/>
+		<xs:element name="registerDate" type="xs:date"/>
+		<xs:element name="purchased" type="xs:integer"/>
+		<xs:element name="shop" maxOccurs="unbounded">
+            <xs:complexType>
+                <xs:attribute name="shop_id" type="xs:integer" use="required"/>
+            </xs:complexType>
+        </xs:element>
+	</xs:sequence>
+	<xs:attribute name="customer_id" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="shopType">
+	<xs:sequence>
+		<xs:element name="name" type="xs:string"/>
+		<xs:element name="created" type="xs:date"/>
+		<xs:element name="owner" type="xs:string"/>
+		<xs:element name="location" type="xs:string"/>
+		<xs:element name="customer" maxOccurs="unbounded">
+            <xs:complexType>
+                <xs:attribute name="customer_id" type="xs:integer" use="required"/>
+            </xs:complexType>
+        </xs:element>
+        <xs:element name="videogame" maxOccurs="unbounded">
+            <xs:complexType>
+                <xs:attribute name="videogame_id" type="xs:integer" use="required"/>
+            </xs:complexType>
+        </xs:element>
+	</xs:sequence>
+	<xs:attribute name="shop_id" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="companyType">
+	<xs:sequence>
+		<xs:element name="name" type="xs:string"/>
+		<xs:element name="owner" type="xs:string"/>
+		<xs:element name="location" type="xs:string"/>
+		<xs:element name="value" type="xs:integer"/>
+		<xs:element name="shop" maxOccurs="unbounded">
+            <xs:complexType>
+                <xs:attribute name="shop_id" type="xs:integer" use="required"/>
+            </xs:complexType>
+        </xs:element>
+	</xs:sequence>
+	<xs:attribute name="company_id" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:element name="root">
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element name="videogame" type="videogameType" maxOccurs="unbounded"></xs:element>
+			<xs:element name="customer" type="customerType" maxOccurs="unbounded"></xs:element>
+			<xs:element name="shop" type="shopType" maxOccurs="unbounded"></xs:element>
+			<xs:element name="company" type="companyType" maxOccurs="unbounded"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:key name="key1">
+        <xs:selector xpath="videogame"/>
+        <xs:field xpath="@videogame_id"/>
+    </xs:key>
+    
+    <xs:key name="key2">
+        <xs:selector xpath="customer"/>
+        <xs:field xpath="@customer_id"/>
+    </xs:key>
+    
+    <xs:key name="key3">
+        <xs:selector xpath="shop"/>
+        <xs:field xpath="@shop_id"/>
+    </xs:key>
+    
+     <xs:key name="key4">
+        <xs:selector xpath="company"/>
+        <xs:field xpath="@company_id"/>
+    </xs:key>
+    
+	<xs:keyref name="keyref1" refer="key1">
+        <xs:selector xpath="shop/videogame"/>
+        <xs:field xpath="@videogame_id"/>
+    </xs:keyref>
+    
+    <xs:keyref name="keyref2" refer="key2">
+        <xs:selector xpath="shop/customer"/>
+        <xs:field xpath="@customer_id"/>
+    </xs:keyref>
+    
+    <xs:keyref name="keyref3" refer="key3">
+        <xs:selector xpath="company/shop"/>
+        <xs:field xpath="@shop_id"/>
+    </xs:keyref>
+    
+    <xs:keyref name="keyref4" refer="key3">
+        <xs:selector xpath="customer/shop"/>
+        <xs:field xpath="@shop_id"/>
+    </xs:keyref>
+	
+</xs:element>
+
+</xs:schema>
