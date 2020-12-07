@@ -24,24 +24,24 @@ public class DOMModifyWF8H4F {
 			
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 	        DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-	        Document doc = dBuilder.parse(new File("src/XMLWF8H4F.xml"));
-	        doc.getDocumentElement().normalize();
+	        Document doc = dBuilder.parse(new File("src/XMLWF8H4F.xml")); // Fájl betöltése
+	        doc.getDocumentElement().normalize(); // Normalizálás
 	        
 	        Node root = doc.getDocumentElement();
 	        
-	        search(root, "videogame", "name", "test", "1");
+	        search(root, "videogame", "name", "test", "1"); //
 	        
 	        
-	        modifyDocument(doc, new File("src/XMLWF8H4F.xml"));
+	        modifyDocument(doc, new File("src/XMLWF8H4F.xml")); // Fájlba írás
 	        
 			
-		}catch (Exception e) {
+		}catch (Exception e) { // Hibakezelés
 	         e.printStackTrace();
 	      }	
 	
 	}
 	
-	public static void search(Node root, String parent, String child, String replace, String id) {
+	public static void search(Node root, String parent, String child, String replace, String id) { // Kereső és cserélő függvény
 		
 		
 		NodeList list = root.getChildNodes();
@@ -58,7 +58,7 @@ public class DOMModifyWF8H4F {
 		
 	}
 	
-	public static void modifyDocument(Document document, File xmlFile) throws TransformerException
+	public static void modifyDocument(Document document, File xmlFile) throws TransformerException // Fájlba írás függvénye
 	{
 		TransformerFactory transformerFactory = TransformerFactory.newInstance();
 		Transformer transformer = transformerFactory.newTransformer();
