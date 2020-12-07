@@ -15,28 +15,28 @@ public class DOMReadWF8H4F {
 	      try {
 	         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 	         DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-	         Document doc = dBuilder.parse(new File("src/XMLWF8H4F.xml"));
-	         doc.getDocumentElement().normalize();
+	         Document doc = dBuilder.parse(new File("src/XMLWF8H4F.xml")); // Fájl betöltése
+	         doc.getDocumentElement().normalize(); // Normalizálás
 	         
-	         printNode(doc.getDocumentElement(), "+");
+	         printNode(doc.getDocumentElement(), "+"); // root elem kiírása
 
-	      } catch (Exception e) {
+	      } catch (Exception e) { // Hibakezelés
 	         e.printStackTrace();
 	      }
 	   }
 
 	
-	public static void printNode(Node rootNode, String spacer) {
+	public static void printNode(Node rootNode, String spacer) { // Node-ok kiírása
 		if (rootNode.getNodeType() == Node.ELEMENT_NODE) {
-	    System.out.print(spacer + rootNode.getNodeName() + " -> " + (rootNode.hasAttributes()? printAttributes(rootNode)+"\n" : rootNode.getFirstChild().getNodeValue().replace("\n", "")+"\n"));
+	    System.out.print(spacer + rootNode.getNodeName() + " -> " + (rootNode.hasAttributes()? printAttributes(rootNode)+"\n" : rootNode.getFirstChild().getNodeValue().replace("\n", "")+"\n")); // Ha nincs gyerek nem ír ki értéket
 		
 		}
-	    NodeList nl = rootNode.getChildNodes();
+	    NodeList nl = rootNode.getChildNodes(); // Gyerek node-ok kirása
 	    for (int i = 0; i < nl.getLength(); i++)
 	        printNode(nl.item(i), spacer + "   ");
 	}
 	
-	public static String printAttributes(Node mainNode)
+	public static String printAttributes(Node mainNode) // Attribútumok kiírása
     {
         NamedNodeMap attributeList = mainNode.getAttributes();
         String attributes = " " + attributeList.item(0).getNodeName() + ":" +attributeList.item(0).getNodeValue();
